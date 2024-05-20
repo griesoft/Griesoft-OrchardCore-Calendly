@@ -21,8 +21,8 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>..\docs\Griesoft.OrchardCore.Calendly.xml</DocumentationFile>
-		<RepositoryUrl></RepositoryUrl>
-		<PackageProjectUrl></PackageProjectUrl>
+		<RepositoryUrl>https://github.com/griesoft/Griesoft-OrchardCore-Calendly</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/griesoft/Griesoft-OrchardCore-Calendly</PackageProjectUrl>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>

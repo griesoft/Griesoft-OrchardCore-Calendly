@@ -363,8 +363,9 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # OrchardCore generated files that we don't need to include in source control
-**/App_Data
-**/Localization
+**/App_Data/
+**/Localization/
 
-**/wwwroot/is-cache
-**/wwwroot/ms-cache
+**/wwwroot/Default/
+**/wwwroot/is-cache/
+**/wwwroot/ms-cache/
