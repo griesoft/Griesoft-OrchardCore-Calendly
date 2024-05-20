@@ -1,0 +1,76 @@
+trigger:
+  paths:
+    exclude:
+    - '*/README.md'
+    - '*/.github/*'
+    - '*/LICENSE.md'
+    - '*/CHANGELOG.md'
+
+pr:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  - group: 'Package Versioning'
+  - name: buildConfiguration 
+    value: 'Release'
+
+jobs:
+  - job: Init
+    displayName: Initialize & Versioning
+    steps:
+      - powershell: |
+          if('$(Build.SourceBranch)' -eq 'refs/heads/main')
+          {
+            Write-Host "##vso[task.setvariable variable=version;isOutput=true]$(major).$(minor).$(patch)"
+          }
+          else
+          {
+            Write-Host "##vso[task.setvariable variable=version;isOutput=true]$(major).$(minor).$(patch)-ci$(Build.BuildId)"
+          }
+        displayName: Set Package Version
+        name: package
+
+  - job: BuildTestPack
+    displayName: Build & Test & Pack
+    dependsOn: Init
+    variables:
+      - name: packageVersion
+        value: $[ dependencies.Init.outputs['package.version'] ]
+    steps:
+
+      - task: DotNetCoreCLI@2
+        displayName: Restore NuGet packages
+        inputs:
+          command: 'restore'
+          projects: '**/?(src|tests)/*.csproj'
+          feedsToUse: 'config'
+          nugetConfigPath: 'nuget.config'
+
+      - task: DotNetCoreCLI@2
+        displayName: Build Package
+        inputs:
+          command: 'build'
+          projects: '**/src/*.csproj'
+          arguments: '-c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/Output'
+          includesymbols: true
+          versioningScheme: 'byEnvVar'
+          versionEnvVar: 'packageVersion'
+
+      - task: DotNetCoreCLI@2
+        displayName: Run Tests
+        condition: succeeded()
+        inputs:
+          command: 'test'
+          projects: '**/tests/*.csproj'
+          testRunTitle: 'Run Tests'
+
+      - task: PublishBuildArtifacts@1
+        displayName: Publish Artifacts
+        condition: succeeded()
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'drop'
+          publishLocation: 'Container'
