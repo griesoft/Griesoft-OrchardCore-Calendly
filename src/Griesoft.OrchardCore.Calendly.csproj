@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Griesoft</Authors>
+		<Owners>Griesoft,jooni91</Owners>
+		<Company>Griesoft</Company>
+		<Copyright>Griesoft</Copyright>
+		<NeutralLanguage>en</NeutralLanguage>
+		<PackageTags>Calendly;schedule meetings;OrchardCore;Module;Griesoft</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageId>Griesoft.OrchardCore.Calendly</PackageId>
+		<Title>Orchard Core Calendly Module</Title>
+		<Description>A module designed for seamless integration of Calendly into your Orchard Core site.</Description>
+		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>..\docs\Griesoft.OrchardCore.Calendly.xml</DocumentationFile>
+		<RepositoryUrl></RepositoryUrl>
+		<PackageProjectUrl></PackageProjectUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" Version="8.0.0" />
+		<PackageReference Include="OrchardCore.Module.Targets" Version="1.8.3" />
+		<PackageReference Include="OrchardCore.ContentManagement" Version="1.8.3" />
+		<PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="1.8.3" />
+		<PackageReference Include="OrchardCore.ResourceManagement" Version="1.8.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="StyleCop.Analyzers" PrivateAssets="all" Version="1.1.118" />
+	</ItemGroup>
+
+</Project>

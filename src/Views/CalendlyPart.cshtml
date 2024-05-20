@@ -1,0 +1,10 @@
+﻿@model CalendlyPartViewModel
+@if (!string.IsNullOrWhiteSpace(Model.Link))
+{
+    <script asp-name="calendly-init" at="Foot" depends-on="calendly">
+        Calendly.initInlineWidget({
+            url: '@($"https://calendly.com/{Model.Link}")',
+            parentElement: document.getElementById('calendlyEmbedContainer')
+        });
+    </script>
+}

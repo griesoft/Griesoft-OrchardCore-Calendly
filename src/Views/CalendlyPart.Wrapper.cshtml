@@ -1,0 +1,20 @@
+﻿<style at="Head">
+    .calendly-embed-container {
+        height: 850px;
+    }
+    @@media (min-width: 768px) {
+        .calendly-embed-container {
+            height: 900px;
+        }
+    }
+    @@media (min-width: 1200px){
+        .calendly-embed-container {
+            height: 700px;
+        }
+    }
+</style>
+<div class="container p-4">
+    <div id="calendlyEmbedContainer" class="calendly-embed-container">
+        @await DisplayAsync((IHtmlContent)Model.Metadata.ChildContent)
+    </div>
+</div>

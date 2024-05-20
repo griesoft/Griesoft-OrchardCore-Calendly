@@ -1,0 +1,10 @@
+{
+  "CalendlyPart": [
+    {
+      "displayType": "Detail",
+      "wrappers": [
+        "CalendlyPart_Wrapper"
+      ]
+    }
+  ]
+}

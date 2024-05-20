@@ -1,0 +1,51 @@
+{
+  "steps": [
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "Calendly",
+          "DisplayName": "Calendly",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "Widget",
+              "Description": "A widget for embedding Calendly on your website."
+            },
+            "FullTextAspectSettings": {
+              "IncludeBodyAspect": false,
+              "IncludeDisplayText": false
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Calendly",
+              "Name": "Calendly",
+              "Settings": {}
+            },
+            {
+              "PartName": "CalendlyPart",
+              "Name": "CalendlyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "CalendlyPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "A content part for embedding Calendly on your website."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        }
+      ]
+    }
+  ]
+}

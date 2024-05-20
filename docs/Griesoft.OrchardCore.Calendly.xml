@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Griesoft.OrchardCore.Calendly</name>
+    </assembly>
+    <members>
+        <member name="T:Griesoft.OrchardCore.Calendly.Drivers.CalendlyPartDisplayDriver">
+            <inheritdoc />
+        </member>
+        <member name="M:Griesoft.OrchardCore.Calendly.Drivers.CalendlyPartDisplayDriver.Display(Griesoft.OrchardCore.Calendly.Models.CalendlyPart)">
+            <inheritdoc />
+        </member>
+        <member name="M:Griesoft.OrchardCore.Calendly.Drivers.CalendlyPartDisplayDriver.Edit(Griesoft.OrchardCore.Calendly.Models.CalendlyPart)">
+            <inheritdoc />
+        </member>
+        <member name="M:Griesoft.OrchardCore.Calendly.Drivers.CalendlyPartDisplayDriver.UpdateAsync(Griesoft.OrchardCore.Calendly.Models.CalendlyPart,OrchardCore.DisplayManagement.ModelBinding.IUpdateModel)">
+            <inheritdoc />
+        </member>
+        <member name="T:Griesoft.OrchardCore.Calendly.Migrations.RecipeMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:Griesoft.OrchardCore.Calendly.Migrations.RecipeMigration.#ctor(OrchardCore.Recipes.Services.IRecipeMigrator)">
+            <inheritdoc />
+        </member>
+        <member name="M:Griesoft.OrchardCore.Calendly.Migrations.RecipeMigration.CreateAsync">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Griesoft.OrchardCore.Calendly.Models.CalendlyPart">
+            <summary>
+            A content part for embedding Calendly on a website.
+            </summary>
+        </member>
+        <member name="P:Griesoft.OrchardCore.Calendly.Models.CalendlyPart.Link">
+            <summary>
+            The relative link to the users Calendly profile.
+            </summary>
+        </member>
+        <member name="T:Griesoft.OrchardCore.Calendly.ResourceManagementOptionsConfiguration">
+            <inheritdoc />
+        </member>
+        <member name="M:Griesoft.OrchardCore.Calendly.ResourceManagementOptionsConfiguration.Configure(OrchardCore.ResourceManagement.ResourceManagementOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Griesoft.OrchardCore.Calendly.Startup">
+            <inheritdoc />
+        </member>
+        <member name="M:Griesoft.OrchardCore.Calendly.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Griesoft.OrchardCore.Calendly.ViewModels.CalendlyPartViewModel">
+            <summary>
+            The view model for the <see cref="T:Griesoft.OrchardCore.Calendly.Models.CalendlyPart"/>.
+            </summary>
+        </member>
+        <member name="P:Griesoft.OrchardCore.Calendly.ViewModels.CalendlyPartViewModel.Link">
+            <summary>
+            The relative link to the users Calendly profile.
+            </summary>
+        </member>
+    </members>
+</doc>
