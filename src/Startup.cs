@@ -2,7 +2,6 @@ using Griesoft.OrchardCore.Calendly.Drivers;
 using Griesoft.OrchardCore.Calendly.Migrations;
 using Griesoft.OrchardCore.Calendly.Models;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using OrchardCore.ContentManagement;
 using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.Data.Migration;
@@ -12,7 +11,7 @@ using OrchardCore.ResourceManagement;
 namespace Griesoft.OrchardCore.Calendly
 {
     /// <inheritdoc />
-    public class Startup : StartupBase
+    public sealed class Startup : StartupBase
     {
         /// <inheritdoc />
         public override void ConfigureServices(IServiceCollection services)
@@ -20,9 +19,9 @@ namespace Griesoft.OrchardCore.Calendly
             services.AddContentPart<CalendlyPart>()
                 .UseDisplayDriver<CalendlyPartDisplayDriver>();
 
-            services.AddTransient<IConfigureOptions<ResourceManagementOptions>, ResourceManagementOptionsConfiguration>();
+            services.AddResourceConfiguration<ResourceManagementOptionsConfiguration>();
 
-            services.AddScoped<IDataMigration, RecipeMigration>();
+            services.AddDataMigration<RecipeMigration>();
         }
     }
 }

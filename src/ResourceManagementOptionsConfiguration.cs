@@ -4,9 +4,9 @@ using OrchardCore.ResourceManagement;
 namespace Griesoft.OrchardCore.Calendly
 {
     /// <inheritdoc />
-    public class ResourceManagementOptionsConfiguration : IConfigureOptions<ResourceManagementOptions>
+    public sealed class ResourceManagementOptionsConfiguration : IConfigureOptions<ResourceManagementOptions>
     {
-        private static ResourceManifest _manifest;
+        private static readonly ResourceManifest _manifest;
 
         static ResourceManagementOptionsConfiguration()
         {

@@ -8,7 +8,7 @@ using OrchardCore.DisplayManagement.Views;
 namespace Griesoft.OrchardCore.Calendly.Drivers
 {
     /// <inheritdoc />
-    public class CalendlyPartDisplayDriver : ContentPartDisplayDriver<CalendlyPart>
+    public sealed class CalendlyPartDisplayDriver : ContentPartDisplayDriver<CalendlyPart>
     {
         /// <inheritdoc />
         public override IDisplayResult Display(CalendlyPart part, BuildPartDisplayContext context)

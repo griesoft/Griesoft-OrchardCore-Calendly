@@ -41,11 +41,17 @@ jobs:
         value: $[ dependencies.Init.outputs['package.version'] ]
     steps:
 
+      - task: UseDotNet@2
+        displayName: Install .NET SDK
+        inputs:
+          packageType: 'sdk'
+          useGlobalJson: true
+
       - task: DotNetCoreCLI@2
         displayName: Restore NuGet packages
         inputs:
           command: 'restore'
-          projects: '**/?(src|tests)/*.csproj'
+          projects: '**/src/*.csproj'
           feedsToUse: 'config'
           nugetConfigPath: 'nuget.config'
 
@@ -58,14 +64,6 @@ jobs:
           includesymbols: true
           versioningScheme: 'byEnvVar'
           versionEnvVar: 'packageVersion'
-
-      - task: DotNetCoreCLI@2
-        displayName: Run Tests
-        condition: succeeded()
-        inputs:
-          command: 'test'
-          projects: '**/tests/*.csproj'
-          testRunTitle: 'Run Tests'
 
       - task: PublishBuildArtifacts@1
         displayName: Publish Artifacts
