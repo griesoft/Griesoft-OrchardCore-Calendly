@@ -65,6 +65,14 @@ jobs:
           versioningScheme: 'byEnvVar'
           versionEnvVar: 'packageVersion'
 
+      - task: DotNetCoreCLI@2
+        displayName: Build Sample
+        condition: succeeded()
+        inputs:
+          command: 'build'
+          projects: '**/samples/**/*.csproj'
+          arguments: '-c $(buildConfiguration)'
+
       - task: PublishBuildArtifacts@1
         displayName: Publish Artifacts
         condition: succeeded()
