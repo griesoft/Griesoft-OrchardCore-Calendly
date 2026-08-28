@@ -4,7 +4,7 @@ using OrchardCore.Recipes.Services;
 namespace Griesoft.OrchardCore.Calendly.Migrations
 {
     /// <inheritdoc />
-    public class RecipeMigration(IRecipeMigrator recipeMigrator) : DataMigration
+    public sealed class RecipeMigration(IRecipeMigrator recipeMigrator) : DataMigration
     {
         private const int MigrationVersionCount = 1;
 

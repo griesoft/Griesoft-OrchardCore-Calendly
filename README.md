@@ -20,6 +20,13 @@ Install in your web project via [NuGet](https://www.nuget.org/packages/Griesoft.
 
 `PM> Install-Package Griesoft.OrchardCore.Calendly`
 
+### Orchard Core Compatibility
+
+| Module version | Orchard Core | .NET |
+|---|---|---|
+| 2.x | 3.x | .NET 10 |
+| 1.x | 2.x | .NET 8 |
+
 ## Usage
 
 ### Enable the Feature
